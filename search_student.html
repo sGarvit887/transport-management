@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Search Student</h2>
+        <form action="/search_student" method="POST">
+            <label for="admission_number">Admission Number:</label><br>
+            <input type="text" id="admission_number" name="admission_number" required><br><br>
+            <input type="submit" value="Search">
+        </form>
+
+        {% if student %}
+        <div class="student-details">
+            <h3>Student Details:</h3>
+            <p><strong>Name:</strong> {{ student['name'] }}</p>
+            <p><strong>Date of Birth:</strong> {{ student['dob'] }}</p>
+            <p><strong>Mobile:</strong> {{ student['mobile'] }}</p>
+            <p><strong>Admission Number:</strong> {{ student['admission_number'] }}</p>
+            <p><strong>Pickup Location:</strong> {{ student['pickup_location'] }}</p>
+        </div>
+        <div class="buttons">
+            <a href="/">Return to Home</a>
+            <a href="/add_student">Add Students</a>
+        </div>
+        {% elif message %}
+        <p>{{ message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

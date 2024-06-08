@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Add Student</h2>
+        <form action="/add_student" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="dob">Date of Birth:</label><br>
+            <input type="date" id="dob" name="dob" required><br><br>
+            <label for="mobile">Mobile:</label><br>
+            <input type="text" id="mobile" name="mobile" required><br><br>
+            <label for="admission_number">Admission Number:</label><br>
+            <input type="text" id="admission_number" name="admission_number" required><br><br>
+            <label for="pickup_location"> Pickup Location:</label><br>
+            <input type="text" id="pickup_location" name="pickup_location" required><br><br>
+            <input type="submit" value="Add Student">
+        </form>
+        <div class="buttons">
+            <a href="/">Return to Home</a>
+            <a href="/search_student">Go to Search</a>
+        </div>
+    </div>
+</body>
+</html>
